@@ -29,16 +29,16 @@ class ViewController: UIViewController {
         //Getting the input, using optionals i.e toInt() and unwrapping i.e (!) in single line:
         var ageInputInt:Int = ageInputText.text.toInt()!
         
-//conversion constant will determine to get the human years:
+		//conversionConstant will determine to get the human years:
         let conversionConstant:Int = 7
         
-//Multiply given age with conversion constant to get the age of a dog in human years:
+		//Multiply given age with conversion constant to get the age of a dog in human years:
         outputLabel.text = "\(ageInputInt * conversionConstant) in human years"
         
-//Show the hidden label
+		//Show the hidden label:
         outputLabel.hidden = false
         
-//Hide the keyboard (numberpad):
+		//Hide the keyboard (numberpad):
         ageInputText.resignFirstResponder()
     }
 
