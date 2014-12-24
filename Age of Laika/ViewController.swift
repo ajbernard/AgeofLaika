@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func convertAgeToDogsAge(sender: UIButton) {
+    @IBAction func convertToDogYears(sender: UIButton) {
 
         // Getting the input, using optionals i.e toInt() and unwrapping i.e (!) in single line:
         var ageInputInt:Int = ageInputText.text.toInt()!
@@ -42,5 +42,35 @@ class ViewController: UIViewController {
         ageInputText.resignFirstResponder()
     }
 
+    @IBAction func convertToRealDogYears(sender: UIButton) {
+        // Getting the input, using optionals i.e toInt() and unwrapping i.e (!) in single line:
+        var ageInputInt:Int = ageInputText.text.toInt()!
+        
+        // conversionConstant will determine to get the human years:
+        var conversionConstant:Double = 4
+        var ageInHumanYears: Double
+        
+        //Each human year equals 10.5 dog years for the first two years, and then 4 dog years for each human year after.
+        if(ageInputInt <= 2 ){
+            
+            //When age is less than or equal to 2:
+            conversionConstant = 10.5
+            ageInHumanYears = Double(ageInputInt) * conversionConstant
+            
+        }else{
+            
+            //subtract 2 because we are adding 21 for first two years:
+            ageInHumanYears = 21.0 + Double(ageInputInt - 2) * conversionConstant
+        }
+        
+        // Multiply given age with conversion constant to get the age of a dog in human years:
+        outputLabel.text = "\(ageInHumanYears) in human years"
+        
+        // Show the hidden label:
+        outputLabel.hidden = false
+        
+        // Hide the keyboard (numberpad):
+        ageInputText.resignFirstResponder()
+    }
 }
 
