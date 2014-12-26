@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var outputLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,8 +32,10 @@ class ViewController: UIViewController {
         
         var ageInputInt:Int
         var ageInput = ageInputText.text
+        outputLabel.text = "Enter a number in human years to get the age of dog"
         
-        //if the input is not nil and not nil when using optionals:
+        // If the input is not nil and not nil when using optionals:
+        //second condition will be nil if user passing characters other than numbers:
         if ageInput != nil && ageInput.toInt() != nil {
             
             ageInputInt = ageInput.toInt()!
@@ -44,8 +47,6 @@ class ViewController: UIViewController {
             outputLabel.text = "\(ageInputInt * conversionConstant) in dog years"
             
 
-        }else {
-            outputLabel.text = "Enter a number in human years to get the age of dog"
         }
         
         // Show the hidden label:
@@ -57,27 +58,39 @@ class ViewController: UIViewController {
 
     @IBAction func convertToRealDogYears(sender: UIButton) {
         // Getting the input, using optionals i.e toInt() and unwrapping i.e (!) in single line:
-        var ageInputInt:Int = ageInputText.text.toInt()!
+        //var ageInputInt:Int = ageInputText.text.toInt()!
         
-        // conversionConstant will determine to get the human years:
-        var conversionConstant:Double = 4
-        var ageInHumanYears: Double
+        var ageInputInt:Int
+        var ageInput = ageInputText.text
         
-        //Each human year equals 10.5 dog years for the first two years, and then 4 dog years for each human year after.
-        if(ageInputInt <= 2 ){
+        // Default output:
+        outputLabel.text = "Enter a number in human years to get the age of dog"
+        
+        // If the input is not nil and not nil when using optionals:
+        //second condition will be nil if user passing characters other than numbers:
+        if ageInput != nil && ageInput.toInt() != nil {
             
-            //When age is less than or equal to 2:
-            conversionConstant = 10.5
-            ageInHumanYears = Double(ageInputInt) * conversionConstant
+            ageInputInt = ageInput.toInt()!
+            // conversionConstant will determine to get the human years:
+            var conversionConstant:Double = 4
+            var ageInHumanYears: Double
+        
+            //Each human year equals 10.5 dog years for the first two years, and then 4 dog years for each human year after.
+            if(ageInputInt <= 2 ){
             
-        }else{
+                //When age is less than or equal to 2:
+                conversionConstant = 10.5
+                ageInHumanYears = Double(ageInputInt) * conversionConstant
             
-            //subtract 2 because we are adding 21 for first two years:
-            ageInHumanYears = 21.0 + Double(ageInputInt - 2) * conversionConstant
+            }else {
+            
+                //subtract 2 because we are adding 21 for first two years:
+                ageInHumanYears = 21.0 + Double(ageInputInt - 2) * conversionConstant
+            }
+        
+            // Multiply given age with conversion constant to get the age of a dog in human years:
+            outputLabel.text = "\(ageInHumanYears) in dog years"
         }
-        
-        // Multiply given age with conversion constant to get the age of a dog in human years:
-        outputLabel.text = "\(ageInHumanYears) in dog years"
         
         // Show the hidden label:
         outputLabel.hidden = false
