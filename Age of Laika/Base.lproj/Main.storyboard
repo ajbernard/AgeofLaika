@@ -13,13 +13,13 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AgeOfLaika.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NWm-Jd-bgS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="65" width="306" height="218"/>
+                                    <rect key="frame" x="18" y="65" width="272" height="218"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age of Laika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVk-5o-iZA">
@@ -43,14 +43,6 @@
                                     <action selector="convertToDogYears:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VI9-e7-l5T"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter dog's age here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-Uv-dqr">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="318" width="161" height="30"/>
-                                </variation>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-Vm-jJU">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Convert to real dog years">
@@ -63,15 +55,23 @@
                                     <action selector="convertToRealDogYears:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BGs-rE-JR5"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cR-6G-OhG">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cR-6G-OhG">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="440" width="243" height="21"/>
+                                    <rect key="frame" x="33" y="440" width="257" height="131"/>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter dog's age here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-Uv-dqr">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="33" y="318" width="161" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -79,9 +79,9 @@
                                 <exclude reference="NWm-Jd-bgS"/>
                                 <exclude reference="mVk-5o-iZA"/>
                                 <exclude reference="h9c-WG-YK5"/>
-                                <exclude reference="ScE-Uv-dqr"/>
                                 <exclude reference="QcG-Vm-jJU"/>
                                 <exclude reference="0cR-6G-OhG"/>
+                                <exclude reference="ScE-Uv-dqr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -89,9 +89,9 @@
                                 <include reference="NWm-Jd-bgS"/>
                                 <include reference="mVk-5o-iZA"/>
                                 <include reference="h9c-WG-YK5"/>
-                                <include reference="ScE-Uv-dqr"/>
                                 <include reference="QcG-Vm-jJU"/>
                                 <include reference="0cR-6G-OhG"/>
+                                <include reference="ScE-Uv-dqr"/>
                             </mask>
                         </variation>
                     </view>

@@ -27,13 +27,26 @@ class ViewController: UIViewController {
     @IBAction func convertToDogYears(sender: UIButton) {
 
         // Getting the input, using optionals i.e toInt() and unwrapping i.e (!) in single line:
-        var ageInputInt:Int = ageInputText.text.toInt()!
+        //var ageInputInt:Int = ageInputText.text.toInt()!
         
-        // conversionConstant will determine to get the human years:
-        let conversionConstant:Int = 7
+        var ageInputInt:Int
+        var ageInput = ageInputText.text
         
-        // Multiply given age with conversion constant to get the age of a dog in human years:
-        outputLabel.text = "\(ageInputInt * conversionConstant) in human years"
+        //if the input is not nil and not nil when using optionals:
+        if ageInput != nil && ageInput.toInt() != nil {
+            
+            ageInputInt = ageInput.toInt()!
+            
+            // conversionConstant will determine to get the human years:
+            let conversionConstant:Int = 7
+            
+            // Multiply given age with conversion constant to get the age of a dog in human years:
+            outputLabel.text = "\(ageInputInt * conversionConstant) in dog years"
+            
+
+        }else {
+            outputLabel.text = "Enter a number in human years to get the age of dog"
+        }
         
         // Show the hidden label:
         outputLabel.hidden = false
@@ -64,7 +77,7 @@ class ViewController: UIViewController {
         }
         
         // Multiply given age with conversion constant to get the age of a dog in human years:
-        outputLabel.text = "\(ageInHumanYears) in human years"
+        outputLabel.text = "\(ageInHumanYears) in dog years"
         
         // Show the hidden label:
         outputLabel.hidden = false
